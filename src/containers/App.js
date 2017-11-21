@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import AppStyle from './App.css';
 import Button from 'material-ui/Button';
-import FormDialog from './components/FormDialog';
-import SimpleSnackBar from './components/SimpleSnackBar';
+import FormDialog from '../components/FormDialog/FormDialog';
+import SimpleSnackBar from '../components/SimpleSnackBar/SimpleSnackBar';
 
 class App extends Component {
   
