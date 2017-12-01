@@ -1,35 +1,35 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Button from 'material-ui/Button';
-import Snackbar from 'material-ui/Snackbar';
-import IconButton from 'material-ui/IconButton';
-import CloseIcon from 'material-ui-icons/Close';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "material-ui/styles";
+import Button from "material-ui/Button";
+import Snackbar from "material-ui/Snackbar";
+import IconButton from "material-ui/IconButton";
+import CloseIcon from "material-ui-icons/Close";
 
 const styles = theme => ({
   close: {
     width: theme.spacing.unit * 4,
-    height: theme.spacing.unit * 4,
-  },
+    height: theme.spacing.unit * 4
+  }
 });
 
 class SimpleSnackbar extends React.Component {
   state = {
-    open: false,
+    open: false
   };
-  
+
   handleClick = () => {
     this.setState({ open: true });
   };
-  
+
   handleRequestClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
-    
+
     this.setState({ open: false });
   };
-  
+
   render() {
     const { classes } = this.props;
     return (
@@ -37,18 +37,23 @@ class SimpleSnackbar extends React.Component {
         <Button onClick={this.handleClick}>Open simple snackbar</Button>
         <Snackbar
           anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
+            vertical: "bottom",
+            horizontal: "left"
           }}
           open={this.state.open}
           autoHideDuration={6000}
           onRequestClose={this.handleRequestClose}
           SnackbarContentProps={{
-            'aria-describedby': 'message-id',
+            "aria-describedby": "message-id"
           }}
           message={<span id="message-id">I am a simple snackbar</span>}
           action={[
-            <Button key="undo" color="accent" dense onClick={this.handleRequestClose}>
+            <Button
+              key="undo"
+              color="accent"
+              dense
+              onClick={this.handleRequestClose}
+            >
               UNDO
             </Button>,
             <IconButton
@@ -59,7 +64,7 @@ class SimpleSnackbar extends React.Component {
               onClick={this.handleRequestClose}
             >
               <CloseIcon />
-            </IconButton>,
+            </IconButton>
           ]}
         />
       </div>
@@ -68,7 +73,7 @@ class SimpleSnackbar extends React.Component {
 }
 
 SimpleSnackbar.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(SimpleSnackbar);

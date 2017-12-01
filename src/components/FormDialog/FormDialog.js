@@ -1,36 +1,38 @@
-import React from 'react';
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
+import React from "react";
+import Button from "material-ui/Button";
+import TextField from "material-ui/TextField";
 import Dialog, {
   DialogActions,
   DialogContent,
   DialogContentText,
-  DialogTitle,
-} from 'material-ui/Dialog';
+  DialogTitle
+} from "material-ui/Dialog";
 
 export default class FormDialog extends React.Component {
   state = {
-    open: false,
+    open: false
   };
-  
+
   handleClickOpen = () => {
     this.setState({ open: true });
   };
-  
+
   handleRequestClose = () => {
     this.setState({ open: false });
   };
-  
+
   render() {
     return (
       <div>
-        <Button raised color="primary" onClick={this.handleClickOpen}>Open form dialog</Button>
+        <Button raised color="primary" onClick={this.handleClickOpen}>
+          Open form dialog
+        </Button>
         <Dialog open={this.state.open} onRequestClose={this.handleRequestClose}>
           <DialogTitle>Subscribe</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Please enter your email address here. We will send
-              updates occasionally.
+              Please enter your email address here. We will send updates
+              occasionally.
             </DialogContentText>
             <TextField
               autoFocus
