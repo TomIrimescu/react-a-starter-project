@@ -12,7 +12,7 @@ class App extends Component {
 
     return (
       <div style={style}>
-        <h3 className={AppStyle.blue}>Hello, I am a react starter project</h3>
+        <h3 className={AppStyle.blue}>Hello, I am a react starter project!</h3>
         <p>
           This starter project includes Material-UI [1.0.0-beta.21] and supports
           CSS Modules.
